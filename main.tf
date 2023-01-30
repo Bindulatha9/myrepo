@@ -1,7 +1,7 @@
 provider "aws" {
 region = "ap-northeast-1"
-access_key = "AKIAY2H7S4EHCEMVNCWI"
-secret_key = "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"
+access_key = ""
+secret_key = ""
 }
 resource "aws_security_group" "key" {
 name = "mygroup"
