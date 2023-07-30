@@ -10,6 +10,6 @@ job('myfirstjobdsl') {
         maven ('clean package' , 'java-tomcat-sample/pom.xml')
     }
     publishers {
-        archieveArtifacts '**/*.war'
+        archiveArtifacts '**/*.war'
     }
 }
