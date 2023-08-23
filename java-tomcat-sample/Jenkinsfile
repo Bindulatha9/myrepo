@@ -13,7 +13,7 @@ pipeline{
     }
     stage ("DockerImage") {
       steps { 
-        sh 'docker build -t image1 java-tomcat-sample/Dockerfile'
+        sh 'docker build -t image1 java-tomcat-sample/.'
       }
     }
   }
