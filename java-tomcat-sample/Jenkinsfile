@@ -16,6 +16,11 @@ pipeline{
         sh 'docker build -t image1 java-tomcat-sample/.'
       }
     }
+    stage ("Dockercont") {
+      steps {
+        sh 'docker run -it --name cont1 -d -p 8081:80 image1'
+      }
+    }
   }
 }
         
