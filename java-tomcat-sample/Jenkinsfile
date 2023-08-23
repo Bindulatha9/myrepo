@@ -11,6 +11,9 @@ pipeline{
         }
       }
     }
+    stage ("DockerImage") {
+      sh 'docker build -t image1 java-tomcat-sample/.
+    }
   }
 }
         
