@@ -3,7 +3,7 @@ pipeline{
   stages {
     stage ("build") {
       steps {
-        sh 'mvn -f /java-tomcat-sample/pom.xml clean package'
+        sh 'mvn -f java-tomcat-sample/pom.xml clean package'
       }
     }
   }
