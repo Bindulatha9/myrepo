@@ -1,0 +1,12 @@
+---
+- hosts: dev
+  connection: ssh
+
+  tasks: 
+      - name: Install git
+        action: yum name=git state=present
+      - name: Install java8.0
+        command: yum install java-1.8.0-openjdk -y
+      - name: Install maven
+        action: yum name=maven state=present
+

@@ -1,0 +1,30 @@
+---
+- hosts: dev
+  connection: ssh
+
+  tasks:
+    - name: Install java11
+      command: amazon-linux-extras install java-openjdk11 -y
+
+    - name: Get tomcat
+      command: wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz
+
+    - name: Untar tomcat
+      command: tar -zxvf apache-tomcat-9.0.80.tar.gz
+  
+    - name: Rename tomcat
+      command: mv apache-tomcat-9.0.80 tomcat
+      tags: abc
+
+    - name: Copy context.xml
+      template:
+        src: context.xml
+        dest: /root/tomcat/webapps/manager/META-INF/
+
+    - name: Copy tomcat-users.xml
+      template:
+        src: tomcat-users.xml
+        dest: /root/tomcat/conf/
+
+    - name: Start tomcat
+      shell: nohup /root/tomcat/bin/startup.sh
